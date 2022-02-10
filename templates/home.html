@@ -1,0 +1,23 @@
+<a href="/"> <h1> Donation Platform </h1> </a>
+
+{% if request.user.is_authenticated %}
+
+<p> hello {{request.user}} </p>
+ 
+
+<a href="{% url 'logout' %}"> logout </a>
+
+{% else %}
+
+<div class="donor">
+    <a href="{% url 'login' %}"> Donate </a>
+</div>
+</hr>
+
+<div class="donor">
+    <a href="{% url 'Consumer_Login_Register:login' %}"> Consumer </a>
+</div>
+</hr>
+
+{% endif%}
+<hr>
