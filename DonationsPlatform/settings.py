@@ -38,8 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'maps',
     'django.contrib.gis'
+=======
+    'Donor_Login_Register',
+    'Consumer_Login_Register'
+>>>>>>> main
 ]
 
 MIDDLEWARE = [
@@ -57,7 +62,13 @@ ROOT_URLCONF = 'DonationsPlatform.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+=======
+                'DIRS': [
+            BASE_DIR / 'templates'
+        ],
+>>>>>>> main
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,7 +82,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DonationsPlatform.wsgi.application'
-
+AUTH_USER_MODEL = 'Donor_Login_Register.Donor'
+AUTH_USER_MODEL = 'Consumer_Login_Register.Consumer'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
