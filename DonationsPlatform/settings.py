@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,11 +36,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
+    'maps',
+    'django.contrib.gis'
+=======
     'Donor_Login_Register',
+<<<<<<< HEAD
     'Consumer_Login_Register',
     'mapping',
     'django.contrib.gis',
 
+=======
+    'Consumer_Login_Register'
+>>>>>>> main
+>>>>>>> ft-mappings
 ]
 
 MIDDLEWARE = [
@@ -57,9 +67,17 @@ ROOT_URLCONF = 'DonationsPlatform.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [
+=======
+<<<<<<< HEAD
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+=======
+                'DIRS': [
+>>>>>>> ft-mappings
             BASE_DIR / 'templates'
         ],
+>>>>>>> main
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,7 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -118,12 +136,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_URL = '/static/'
+=======
+STATIC_URL = 'static/'
+>>>>>>> ft-mappings
 STATIC_ROOT = ''
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+<<<<<<< HEAD
 
+=======
+>>>>>>> ft-mappings
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
