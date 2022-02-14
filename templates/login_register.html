@@ -1,50 +1,145 @@
-
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 {% if page == 'login' %}
-<div>
-    <form method = "POST" action="">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        {% csrf_token %}
+    <div class="container py-5 h-100 bg-image" style="background-image: url('/templates/images/shalitha-dissanayaka-wqb_dTZCNys-unsplash.jpg') no-repeat   center center fixed;">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-primary text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+    
+                <div class="mb-md-5 mt-md-4 pb-5">
+                        <form method = "POST" action="">
 
-        <label > username: </label>
+                            {% csrf_token %}
+                            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                            <p class="text-dark-50 mb-5">Please enter your login and password!</p>
 
-        <input type="email" name="email" placeholder="Enter a valid email address">
+                            <label class="form-label font-size-20"> Email: </label>
+
+                            <input type="email" class="form-control form-control-lg font-size-20" name="email" placeholder="Enter a valid email address">
 
 
-        <label > Password: </label>
+                            <label class="form-label font-size-20"> Password: </label>
 
-        <input type="password" name="password" placeholder="Enter password">
+                            <input type="password" class="form-control form-control-lg font-size-20"  name="password" placeholder="Enter password">
 
 
-        <input type="submit" value="login">
+                            <input class="btn btn-danger m-3 p-2 px-5 font-size-20" type="submit" value="login">
 
-        
-    </form>
+                            
+                        </form>
 
-    <p> No account?</p>
-    <a href="{% url 'register' %}"> Sign Up as a Donor</a>
-   
 
-</div>
+                        <p class="mb-0 p-2"></pclass>> No account?</p>
+                        <a href="{% url 'register' %} " class="text-red bg-warning p-1 fw-bold"> Sign Up</a>
+                
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
 {% else %}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<div>
-    <form method = "post" action="">
 
-        {% csrf_token %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#id_sign_up_as").change(function() {
+            $(this).find("option:selected").each(function(){
+            var name = $("#id_sign_up_as").val();
+            if (name === "Donor"){
+                $("#id_Organization").show();
+                $('id_Organization, label[for="id_Organization"]').show()
+                $("#id_donee_name").hide();
+                $('id_donee_name, label[for="id_donee_name"]').hide()
+                $("#id_donee_category").hide();
+                $('id_donee_category, label[for="id_donee_category"]').hide()
+                $("#id_no_individuals").hide();
+                $('id_no_individuals, label[for="id_no_individuals"]').hide()
+                $("#id_facebook").hide();
+                $('id_facebook, label[for="id_facebook"]').hide()
+                $("#id_twitter").hide();
+                $('id_twitter, label[for="id_twitter"]').hide()
+                $("#id_website").hide();
+                $('id_website, label[for="id_website"]').hide()
+                document.getElementById("id_location").setAttribute('value','Nairobi');
+            }
 
-        {{form.as_p}}
+            else if (name === "Donee"){
+                $("#id_Organization").hide();
+                $('id_Organization, label[for="id_Organization"]').hide()
+                $("#id_donee_name").show();
+                $('id_donee_name, label[for="id_donee_name"]').show()
+                $("#id_donee_category").show();
+                $('id_donee_category, label[for="id_donee_category"]').show()
+                $("#id_no_individuals").show();
+                $('id_no_individuals, label[for="id_no_individuals"]').show()
+                $("#id_facebook").show();
+                $('id_facebook, label[for="id_facebook"]').show()
+                $("#id_twitter").show();
+                $('id_twitter, label[for="id_twitter"]').show()
+                $("#id_website").show();
+                $('id_website, label[for="id_website"]').show()
+                document.getElementById("id_location").setAttribute('value','');
 
-        <input type="submit" value=" Register ">
-
-    </form>
+            } 
+            
+            
+             else {
+                $("#id_Organization").hide();
+                $('id_Organization, label[for="id_Organization"]').hide()
+                $("#id_donee_name").hide();
+                $('id_donee_name, label[for="id_donee_name"]').hide()
+                $("#id_donee_category").hide();
+                $('id_donee_category, label[for="id_donee_category"]').hide()
+                $("#id_no_individuals").hide();
+                $('id_no_individuals, label[for="id_no_individuals"]').hide()
+                $("#id_facebook").hide();
+                $('id_facebook, label[for="id_facebook"]').hide()
+                $("#id_twitter").hide();
+                $('id_twitter, label[for="id_twitter"]').hide()
+                $("#id_website").hide();
+                $('id_website, label[for="id_website"]').hide()
+                
+                
+            }
+            });
+        }).change();
+    });
+</script>
+<div class="home-container">
+    <div class="container py-2 h-100 bg-image " style="background-image: url('/templates/images/shalitha-dissanayaka-wqb_dTZCNys-unsplash.jpg')" >
+        <div class="row d-flex justify-content-center align-items-center h-50">
+            <div class="col-8 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-light text-black" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
     
-    <p> Have an account?</p>
-    <a href="{% url 'login' %}"> Login as a Donor</a>
-    
+                <div class="mb-md-5 mt-md-4 pb-5">
+                        <form method = "post" action="">
+                            <h3 class="mb-5">Sign Up</h3>
 
+                            {% csrf_token %}
+
+                            {{form|crispy}}
+
+                            <input class="btn btn-primary m-3 p-2 px-5 font-size-20" type="submit" value=" Register ">
+
+                        </form>
+                        
+                        <p> Have an account?</p>
+                        <a href="{% url 'login' %}"> Login </a>
+        
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 {% endif %}
 {% endblock content %}

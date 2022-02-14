@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Show Hide Elements Using Select Box</title>
+<style>
+    .box{
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+    }
+    .red{ background: #ff0000; }
+    .green{ background: #228B22; }
+    .blue{ background: #0000ff; }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+         
+            if(optionValue){
+             
+                if(optionValue =='donor'){
+             
+                    $(".donor").not("." + optionValue).hide();
+                    $("." + optionValue).show();
+                $(".consumer").hide();
+
+                }
+                
+                if(optionValue =='consumer'){
+             
+                    $(".consumer").not("." + optionValue).hide();
+                    $("." + optionValue).show();
+                    $(".donor").hide();
+
+                }
+            
+              
+            } else{
+                $(".consumer").hide();
+                $(".donor").hide();
+
+
+            }
+        });
+    }).change();
+});
+</script>
+</head>
+<body>
+    <div>
+        <select>
+            <option>Choose Account</option>
+            <option value=""></option>
+
+            <option value="donor">donor</option>
+            <option value="consumer">consumer</option>
+
+              
+        </select>
+    </div>
+    <!-- <div class="red box">You have selected <strong>red option</strong> so i am here</div>
+    <div class="green box">You have selected <strong>green option</strong> so i am here</div>
+    <div class="blue box">You have selected <strong>blue option</strong> so i am here</div> -->
+
+    <input type="text" class="facebook consumer " placeholder="facebook">
+    <input type="text" class="linked consumer " placeholder="linked In">
+    <input type="text" class="twitter consumer " placeholder="twitter">
+
+    <input type="text" class="facebook donor " placeholder="facebook donor">
+    <input type="text" class="linked donor " placeholder="linked In donor">
+    <input type="text" class="twitter donor " placeholder="twitter donor">
+
+</body>
+</html>

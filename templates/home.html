@@ -1,4 +1,6 @@
-<a href="/"> <h1> Donation Platform </h1> </a>
+
+
+<a href="/"> <h1 class="bg-primary text-light p-5 p-lg-4 text-center text-sm-start "> Donation Platform </h1> </a>
 
 {% if request.user.is_authenticated %}
 
@@ -8,15 +10,22 @@
 <a href="{% url 'logout' %}"> logout </a>
 
 {% else %}
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3 fixed-top ">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="{% url 'login' %}" class="nav-link text-light ">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'register' %}" class="nav-link text-light">Singup</a>
+            </li>
+            </ul>
+        </div>
 
-<div class="donor">
-    <a href="{% url 'login' %}"> Donate </a>
-</div>
-</hr>
-
-<div class="donor">
-    <a href="{% url 'Consumer_Login_Register:login' %}"> Consumer </a>
-</div>
+    </div>
+        
+</nav>
 </hr>
 
 {% endif%}

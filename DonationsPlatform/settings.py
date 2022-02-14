@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+import Authentification
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Donor_Login_Register',
-    'Consumer_Login_Register'
+    'Authentification',
+    'crispy_forms',
+    
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,8 +76,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DonationsPlatform.wsgi.application'
-AUTH_USER_MODEL = 'Donor_Login_Register.Donor'
-AUTH_USER_MODEL = 'Consumer_Login_Register.Consumer'
+#AUTH_USER_MODEL = 'Donor_Login_Register.Users'
+AUTH_USER_MODEL = 'Authentification.AllUsers'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
