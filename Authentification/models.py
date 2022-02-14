@@ -59,7 +59,8 @@ class AllUsers(AbstractBaseUser,PermissionsMixin):
     sign_up_as = models.CharField(max_length=20, choices=gn)
     ORG = (
         ('Individual','Individual'),
-        ('Organization','Organization')
+        ('Organization','Organization'),
+        ("               ","               ")
     )
     Organization = models.CharField(max_length=60, verbose_name= 'Organization', choices= ORG)
     donee_name = models.CharField(max_length=50,verbose_name= 'Enter name of you donee organization',blank=True)
